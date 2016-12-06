@@ -1,0 +1,6 @@
+sim-outorder: SimpleScalar/Alpha Tool Set version 4.0 of December, 2001.
+Copyright (C) 2000-2001 by The Regents of The University of Michigan.
+Copyright (C) 1994-2001 by Todd M. Austin, Ph.D. and SimpleScalar, LLC.
+This version of SimpleScalar is licensed for academic non-commercial use only.
+
+fatal: number of integer ALU's must be <= MAX_INSTS_PER_CLASS
