@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>COSE422 : Processor-architecture by mingpeach</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>COSE422 : Processor-architecture</h1>
+        <p>Processor Core Architecture and Design - SimpleScalar Simulation</p>
+
+        <p class="view"><a href="https://github.com/mingpeach/Processor-architecture">View the Project on GitHub <small>mingpeach/Processor-architecture</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mingpeach/Processor-architecture/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mingpeach/Processor-architecture/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mingpeach/Processor-architecture">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>The project is to make an optimal architecture parameter selection for superscalar processor in a fashion similar to the results shown in attached Text Chap. 3 (Sec.3.1-Sec.3.4).</p>
+
+<ol>
+<li>
+<p>Run sim-outorder from SimpleScalar with two SPEC2006 programs. gcc and perl to decide on optimal processor architecture parameters, given I-Cache = 64KB and Dcache=16KB, and perfect branch prediction. “Optimal” here means a rational trade-off in cost and performance. Using ref data as input for the benchmark programs.</p>
+
+<p>a. The report should document your choice of the parameters qualitatively and quantitatively: Parameter values to choose are for Instruction issue width (and the number of function units), RUU (Register Update Unit) size, and D-cache associativity.</p>
+
+<p>Assume that the cycle time increases</p>
+
+<ul>
+<li><p>10% by doubling the issue width</p></li>
+<li><p>10% by doubling the RUU size</p></li>
+<li><p>2% by doubling the D-cache associativity</p></li>
+<li><p>2% by doubling the number of function units (including load/store units)</p></li>
+</ul>
+
+<p>b.  Also, you need to make a cost model associated with hardware resource available so that you can make a trade-off in cost and performance.</p>
+</li>
+<li><p>With the organization determined in 1, now you are asked to play with D-cache size and BTB size for branch prediction. We now use more practical bimodal predictor with its size choices of 512, 1K, 2K, and 4K entries. Assuming cycle time will increase 10% by doubling the size for D-cache (up to 128KB), try to decide the D-cache size along with the BTB size that provides the best performance. Choice of BTB size will not change cycle time but cost will change (you can apply the same cost model developed for 1 here).</p></li>
+<li><p>You can download the Simplescalar 3.0 source code from the course website. Change the host options in the Makefile accordingly before compiling the SimpleScalar executable(the simulator). Use the pre-compiled benchmark program binaries as the input benchmark programs for the SimpleScalar simulator. The input parameters for the benchmark programs are also available.</p></li>
+<li><p>Running all instructions in one program in SimpleScalar will typically cost more than 24 hours. So in this project, you are asked to skip first 1 billion instructions and just simulate the next 1 billion instructions for each benchmark programs. Please read the new features in the ANNOUNCE-3.0 in the simplesim-3.0 folder to figure out how to do it. (Hints: use –fastfwd and –max:instr options)</p></li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mingpeach">mingpeach</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
